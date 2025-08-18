@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+
+    h2 {
+      text-align: center;
+      color: #6b21a8;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 5px;
+      border: 1px solid #d1c4e9;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .mood-options,
+    .activity-options {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mood-options label,
+    .activity-options label {
+      background-color: #ede9fe;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      border: 1px solid #c4b5fd;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .mood-options input[type="radio"],
+    .activity-options input[type="checkbox"] {
+      display: none;
+    }
+
+    .mood-options input[type="radio"]:checked + label,
+    .activity-options input[type="checkbox"]:checked + label {
+      background-color: #c4b5fd;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background-color: #7c3aed;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6b21a8;
+    }
+
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form class="form-container">
+    <h2>🌤️ Mood Tracker</h2>
+
+    <!-- Mood -->
+    <label>Your Current Mood</label>
+    <div class="mood-options">
+      <input type="radio" id="happy" name="mood" />
+      <label for="happy">😊 Happy</label>
+
+      <input type="radio" id="sad" name="mood" />
+      <label for="sad">😢 Sad</label>
+
+      <input type="radio" id="anxious" name="mood" />
+      <label for="anxious">😟 Anxious</label>
+
+      <input type="radio" id="excited" name="mood" />
+      <label for="excited">😃 Excited</label>
+
+      <input type="radio" id="calm" name="mood" />
+      <label for="calm">😌 Calm</label>
+    </div>
+
+
+    <!-- Thought Journal -->
+    <label for="thoughts">Describe how you're feeling</label>
+    <textarea id="thoughts" name="thoughts" rows="4" placeholder="Write your thoughts here..."></textarea>
+
+    <!-- Date -->
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" />
+
+    <!-- Activities -->
+    <label>Activities Today</label>
+    <div class="activity-options">
+      <input type="checkbox" id="meditated" />
+      <label for="meditated">🧘 Meditated</label>
+
+      <input type="checkbox" id="exercise" />
+      <label for="exercise">🏋️ Exercise</label>
+
+      <input type="checkbox" id="friend" />
+      <label for="friend">💬 Talked to Friend</label>
+
+      <input type="checkbox" id="music" />
+      <label for="music">🎵 Listened to Music</label>
+
+      <input type="checkbox" id="nature" />
+      <label for="nature">🌿 Time in Nature</label>
+    </div>
+
+    <!-- Gratitude -->
+    <label for="gratitude">Something You're Grateful For</label>
+    <input type="text" id="gratitude" name="gratitude" placeholder="e.g., My family, good health" />
+
+    <!-- Submit -->
+    <button type="submit">Submit Mood</button>
+  </form>
+</body>
+</html>
